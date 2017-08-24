@@ -22,6 +22,8 @@ func main() {
                 os.Exit(1)
         }
 	if *customcert {
+		var caCert = cert()
+		var caKey = key()
 		setCA(caCert, caKey)
 	}
 	proxy := goproxy.NewProxyHttpServer()

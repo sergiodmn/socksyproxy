@@ -9,9 +9,6 @@ import (
 	"github.com/elazarl/goproxy"
 )
 
-var caCert = cert()
-var caKey = key()
-
 func setCA(caCert, caKey []byte) error {
 	goproxyCa, err := tls.X509KeyPair(caCert, caKey)
 	if err != nil {
@@ -33,7 +30,7 @@ func cert() []byte {
     if err != nil {
         fmt.Print(err)
     }
-    return (c)
+    return []byte(c)
 }
 
 func key() []byte {
